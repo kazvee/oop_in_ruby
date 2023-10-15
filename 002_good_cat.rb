@@ -1,10 +1,18 @@
 class GoodCat
 
   # The `attr_accessor` method takes a symbol as an argument, and uses it to create the method name for the getter and setter methods
-  attr_accessor :name
+  attr_accessor :name, :height, :weight
 
-  def initialize(name)
-    @name = name
+  def initialize(n, h, w)
+    @name = n
+    @height = h
+    @weight = w
+  end
+
+  def change_info(n, h, w)
+    @name = n
+    @height = h
+    @weight = w
   end
 
   # Replaced by `attr_accessor` method
@@ -24,14 +32,14 @@ class GoodCat
   def speak
     "#{name} says Meow!"
   end
+
+  def info
+    "#{name} weighs #{weight} and is #{height} tall."
+  end
 end
 
-mittens = GoodCat.new("Mittens")
-puts mittens.speak              
-puts mittens.name
-mittens.name = "Miss Mittens"
-puts mittens.name
+mittens = GoodCat.new("Mittens", "12 inches", "10 lbs")
+puts mittens.info         # => Mittens weighs 10 lbs and is 12 inches tall.
 
-muffy = GoodCat.new("Muffy")
-puts muffy.speak              
-puts muffy.name
+muffy = GoodCat.new("Muffy", "18 inches", "15 lbs")
+puts muffy.info           # => Muffy weighs 15 lbs and is 18 inches tall.
