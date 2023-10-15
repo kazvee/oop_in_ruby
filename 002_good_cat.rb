@@ -39,6 +39,12 @@ class GoodCat
     # Although not required, we can use `self.name=` to let Ruby know we're calling a getter method and not creating a local variable 
     "#{self.name} weighs #{self.weight} and is #{self.height} tall."
   end
+
+  # Class methods are where we put functionality that does not pertain to individual objects. 
+  # Objects contain state, and if we have a method that does not need to deal with states, then we can just use a class method
+  def self.what_am_i         # Class method definition
+    "I'm a GoodCat class!"
+  end
 end
 
 mittens = GoodCat.new("Mittens", "12 inches", "10 lbs")
@@ -48,3 +54,5 @@ puts mittens.info                                           # => Miss Mittens we
 
 muffy = GoodCat.new("Muffy", "18 inches", "15 lbs")
 puts muffy.info           # => Muffy weighs 15 lbs and is 18 inches tall.
+
+puts GoodCat.what_am_i    # => I'm a GoodCat class!
