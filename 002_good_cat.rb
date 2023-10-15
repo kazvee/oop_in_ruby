@@ -1,7 +1,7 @@
 class GoodCat
-  def initialize
-    puts "This object was initialized!"
+  def initialize(name)
+    @name = name
   end
 end
 
-mittens = GoodCat.new        # => "This object was initialized!"
+mittens = GoodCat.new("Mittens")
