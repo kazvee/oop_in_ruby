@@ -17,9 +17,12 @@ class GoodFish < Animal
 end
 
 class Cat < Animal
+  def speak
+    super + " From Cat class!"
+  end
 end
 
 goldie = GoodFish.new("Goldie")
 paws = Cat.new
 puts goldie.speak           # => Hello!
-puts paws.speak             # => Hello!
+puts paws.speak             # => Hello! From Cat class!
