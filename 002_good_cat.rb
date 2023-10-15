@@ -4,9 +4,12 @@ class GoodCat
   end
 
   def speak
-    "Meow!"
+    "#{@name} says Meow!"
   end
 end
 
 mittens = GoodCat.new("Mittens")
-puts mittens.speak                # => Meow!
+puts mittens.speak                # => Mittens says Meow!
+
+muffy = GoodCat.new("Muffy")
+puts muffy.speak                  # => Muffy says Meow!
