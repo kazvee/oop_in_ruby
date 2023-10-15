@@ -10,9 +10,9 @@ class GoodCat
   end
 
   def change_info(n, h, w)
-    @name = n
-    @height = h
-    @weight = w
+    self.name = n
+    self.height = h
+    self.weight = w
   end
 
   # Replaced by `attr_accessor` method
@@ -34,12 +34,17 @@ class GoodCat
   end
 
   def info
-    "#{name} weighs #{weight} and is #{height} tall."
+    # "#{name} weighs #{weight} and is #{height} tall."
+
+    # Although not required, we can use `self.name=` to let Ruby know we're calling a getter method and not creating a local variable 
+    "#{self.name} weighs #{self.weight} and is #{self.height} tall."
   end
 end
 
 mittens = GoodCat.new("Mittens", "12 inches", "10 lbs")
-puts mittens.info         # => Mittens weighs 10 lbs and is 12 inches tall.
+puts mittens.info                                           # => Mittens weighs 10 lbs and is 12 inches tall.
+mittens.change_info('Miss Mittens', '13 inches', '12 lbs')
+puts mittens.info                                           # => Miss Mittens weighs 12 lbs and is 13 inches tall.  
 
 muffy = GoodCat.new("Muffy", "18 inches", "15 lbs")
 puts muffy.info           # => Muffy weighs 15 lbs and is 18 inches tall.
