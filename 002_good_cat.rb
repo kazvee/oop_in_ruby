@@ -3,12 +3,12 @@ class GoodCat
     @name = name
   end
 
-  def get_name
+  def name
     @name
   end
 
-  def set_name=(name)
-    @name = name
+  def name=(n)
+    @name = n
   end
 
   def speak
@@ -18,10 +18,10 @@ end
 
 mittens = GoodCat.new("Mittens")
 puts mittens.speak                # => Mittens says Meow!
-puts mittens.get_name
-mittens.set_name = "Miss Mittens"
-puts mittens.get_name
+puts mittens.name
+mittens.name = "Miss Mittens"
+puts mittens.name
 
 muffy = GoodCat.new("Muffy")
 puts muffy.speak                  # => Muffy says Meow!
-puts muffy.get_name
+puts muffy.name
